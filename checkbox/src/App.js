@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
@@ -15,18 +14,16 @@ class App extends Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleChexboxOne = this.handleChexboxOne.bind(this);
+    this.handleCheckboxOne = this.handleCheckboxOne.bind(this);
     this.handleCheckboxTwo = this.handleCheckboxTwo.bind(this);
-    this.handleChexboxThree = this.handleChexboxThree.bind(this);
+    this.handleCheckboxThree = this.handleCheckboxThree.bind(this);
     this.handleCheckboxFour = this.handleCheckboxFour.bind(this);
     this.handleCheckboxFive = this.handleCheckboxFive.bind(this);
   }
 
-  handleInputChange(e) {
+  handleInputChange = e => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = e.target.name;
-    const { checkAll } = this.state;
 
     this.setState({
       checkAll: value,
@@ -36,12 +33,11 @@ class App extends Component {
       checkbox4: value,
       checkbox5: value
     });
-  }
+  };
 
-  handleChexboxOne(e) {
+  handleCheckboxOne = e => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = e.target.name;
     const {
       checkAll,
       checkbox1,
@@ -55,12 +51,11 @@ class App extends Component {
       checkbox1: value,
       checkAll: checkbox1 && checkbox2 && checkbox3 && checkbox4 && checkbox5
     });
-  }
+  };
 
-  handleCheckboxTwo(e) {
+  handleCheckboxTwo = e => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = e.target.name;
     const {
       checkAll,
       checkbox1,
@@ -74,12 +69,11 @@ class App extends Component {
       checkbox2: value,
       checkAll: checkbox1 && checkbox2 && checkbox3 && checkbox4 && checkbox5
     });
-  }
+  };
 
-  handleChexboxThree(e) {
+  handleCheckboxThree = e => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = e.target.name;
     const {
       checkAll,
       checkbox1,
@@ -93,12 +87,11 @@ class App extends Component {
       checkbox3: value,
       checkAll: checkbox1 && checkbox2 && checkbox3 && checkbox4 && checkbox5
     });
-  }
+  };
 
-  handleCheckboxFour(e) {
+  handleCheckboxFour = e => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = e.target.name;
     const {
       checkAll,
       checkbox1,
@@ -112,12 +105,11 @@ class App extends Component {
       checkbox4: value,
       checkAll: checkbox1 && checkbox2 && checkbox3 && checkbox4 && checkbox5
     });
-  }
+  };
 
-  handleCheckboxFive(e) {
+  handleCheckboxFive = e => {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = e.target.name;
     const {
       checkAll,
       checkbox1,
@@ -131,7 +123,7 @@ class App extends Component {
       checkbox5: value,
       checkAll: checkbox1 && checkbox2 && checkbox3 && checkbox4 && checkbox5
     });
-  }
+  };
 
   render() {
     return (
@@ -159,7 +151,7 @@ class App extends Component {
             name="checkbox1"
             type="checkbox"
             checked={this.state.checkAll || this.state.checkbox1}
-            onChange={this.handleChexboxOne}
+            onChange={this.handleCheckboxOne}
           />
         </label>
         <br />
@@ -179,7 +171,7 @@ class App extends Component {
             name="checkbox3"
             type="checkbox"
             checked={this.state.checkAll || this.state.checkbox3}
-            onChange={this.handleChexboxThree}
+            onChange={this.handleCheckboxThree}
           />
         </label>
         <br />
