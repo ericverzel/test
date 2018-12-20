@@ -12,13 +12,6 @@ class App extends Component {
       checkbox4: false,
       checkbox5: false
     };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleCheckboxOne = this.handleCheckboxOne.bind(this);
-    this.handleCheckboxTwo = this.handleCheckboxTwo.bind(this);
-    this.handleCheckboxThree = this.handleCheckboxThree.bind(this);
-    this.handleCheckboxFour = this.handleCheckboxFour.bind(this);
-    this.handleCheckboxFive = this.handleCheckboxFive.bind(this);
   }
 
   handleInputChange = e => {
